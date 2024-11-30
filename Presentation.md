@@ -1,7 +1,187 @@
 
+# GlobalTech Solutions Cloud Migration Project
+---
+
+# Project Overview
+
+Azure is Microsoft’s cloud computing platform, offering a wide range of services for computing, storage, networking, AI, and app development. It enables businesses to build, deploy, and manage applications and infrastructure across a global network of data centers with scalability, reliability, and security.
+
+This project focuses on migrating **GlobalTech Solutions' infrastructure** to Azure to address challenges related to scalability, modernization, compliance, and cost efficiency. The migration involves transitioning:
+
+- 150 virtual machines
+- A monolithic ERP system
+- A SQL database cluster
+- E-commerce applications
+- A legacy mainframe system
+
+---
+
+## Key Objectives
+
+1. **Scalability and Modernization**:  
+   Leverage **Azure Kubernetes Service (AKS)** for modernization and ensure future scalability of applications and services.
+
+2. **Compliance and Security**:  
+   Adhere to international regulations such as **GDPR** and **HIPAA** using Azure's security and governance tools, including **Azure Security Center** and **Azure Policy**.
+
+3. **Downtime Minimization**:  
+   Ensure that downtime for critical systems does not exceed **4 hours** during the migration process.
+
+4. **Cost Efficiency**:  
+   Optimize costs and resource usage with tools like the **Azure Pricing Calculator**.
+
+---
+# Part 1: Azure Migration Strategy & Architecture
+
+## On-Premises Infrastructure Overview
+
+![alt text](image.png)
+
+The diagram provides a high-level overview of the current on-premises infrastructure for **GlobalTech Solutions**, representing its key systems and their primary functions. Each component is critical to the company's operations and must be carefully considered during the cloud migration process. Below is a detailed breakdown of the systems illustrated:
 
 
+### 1. Virtual Machines
+- **Component**: Represents 150 virtual machines running a combination of Windows Server and Linux operating systems.  
+- **Role**: Hosts a variety of applications and services critical to the company's day-to-day operations.  
+- **Consideration for Migration**: A **lift-and-shift** strategy may be suitable for most VMs, but certain workloads may need **re-platforming** or **modernization**.
 
+
+### 2. Monolithic ERP System
+- **Component**: The legacy ERP system supports financial and inventory management.  
+- **Role**: Provides core business operations but is nearing the end of its support lifecycle.  
+- **Challenges**: Its **monolithic architecture** and outdated technology require careful **refactoring** or replacement with a **cloud-native ERP solution**.
+
+
+### 3. Public-Facing E-Commerce Applications
+- **Component**: A set of customer-facing applications requiring strict uptime and high availability.  
+- **Role**: Supports the company’s e-commerce operations across multiple countries.  
+- **Challenges**:  
+  - Downtime during migration should not exceed **four hours**.  
+  - A **hybrid migration strategy** with replication to the cloud is recommended to ensure a seamless transition.
+
+
+### 4. In-House SQL Database Cluster
+- **Component**: A centralized database cluster storing sensitive customer and operational data.  
+- **Role**: Acts as the backbone for data storage and retrieval across various business applications.  
+- **Challenges**:  
+  - Compliance with international regulations such as **GDPR** and **HIPAA** is critical.  
+  - Secure data encryption and migration to a **managed database service** in the cloud will be key.
+
+
+### 5. Legacy Mainframe System
+- **Component**: A legacy system used primarily for payroll and reporting.  
+- **Role**: Although critical, this system is outdated and expensive to maintain.  
+- **Challenges**:  
+  - Its age and architecture require a **rehosting** or complete replacement with a modern, scalable alternative, such as **SaaS** or **serverless technologies**.
+
+---
+## Azure Cloud Infrastructure Overview
+
+The diagram for the Azure Cloud Infrastructure represents the future IT landscape of GlobalTech Solutions after migrating its systems from on-premises to Microsoft Azure. It highlights the components that enable workload modernization while maintaining compliance with business and technical objectives.
+
+![alt text](image-1.png)
+
+### Core Components and Their Roles
+
+### 1. Azure Virtual Machines (AVM)
+- **Purpose**: Hosts workloads migrated from on-premises virtual machines using a lift-and-shift approach.  
+- **Benefits**: Maintains compatibility with existing applications while leveraging Azure's scalability, cost management, and high availability.
+
+### 2. Azure App Service (ASE)
+- **Purpose**: Refactors the monolithic ERP into microservices hosted on this fully managed platform as part of modernizing the stack.  
+- **Benefits**: Enables easy application management, auto-scaling, and integration with other Azure services.
+
+### 3. Azure Kubernetes Service (AKS)
+- **Purpose**: Hosts containerized e-commerce applications, providing high availability and rapid scaling based on demand.  
+- **Benefits**: Handles orchestration, simple management, and reliability for containers.
+
+### 4. Azure SQL Managed Instance (SQLMI)
+- **Purpose**: Migrates the in-house SQL database cluster to a managed, scalable database service.  
+- **Benefits**: Enhances performance, security, and compliance while reducing administrative overhead.
+
+### 5. Azure Logic Apps (Logic)
+- **Purpose**: Replaces legacy mainframe systems with serverless workflows for payroll and reporting.  
+- **Benefits**: Offers cost-effective automation and seamless integration with other Azure services.
+
+### 6. Azure Backup and Recovery Vault (Backup)
+- **Purpose**: Safeguards critical systems against data loss or disasters with automated backups and recovery options.  
+- **Benefits**: Provides business continuity and quick recovery solutions.
+
+### 7. Azure Monitor (Monitor)
+- **Purpose**: Monitors the performance, availability, and compliance of all cloud resources.  
+- **Benefits**: Offers real-time insights and analytics to address issues proactively and ensure system reliability.
+
+### 8. Azure Front Door (FrontDoor)
+- **Purpose**: A global load balancer that optimally distributes traffic among e-commerce applications and ERP services.  
+- **Benefits**: Enhances availability, minimizes latency, and ensures a seamless user experience.
+
+### 9. Azure Key Vault
+- **Purpose**: Secures sensitive data, such as encryption keys and secrets, for applications like SQL Managed Instance.  
+- **Benefits**: Protects data with high-grade encryption and controlled access.
+
+### 10. Azure Policy
+- **Purpose**: Enforces compliance of Azure resources with international regulations like GDPR and HIPAA.  
+- **Benefits**: Automates auditing and compliance enforcement, reducing risks and ensuring regulatory alignment.
+
+---
+
+## Interconnections and Relationships
+
+### Backups for Disaster Recovery
+- Azure Backup integrates with all critical systems, providing a centralized disaster recovery solution.
+
+### Availability
+- Azure Front Door works with Azure App Service and AKS to ensure availability and fast response times for end users.
+
+### Compliance Audit
+- Azure Monitor and Azure Policy collaborate to ensure compliance auditing and enforcement across the infrastructure.
+
+### Data Security
+- Azure Key Vault secures sensitive data through encryption and controlled access, integrating seamlessly with other services like SQLMI.
+
+---
+
+
+## Phases of Migration Using Azure Migrate
+
+---
+
+### 1. Assessment Phase
+**Purpose**: Assess the existing on-premises environment readiness for migration.  
+
+**Azure Migrate Role**:  
+- **Discover and Inventory**: Discovers and inventories the on-premises resources (VMs, databases, applications).  
+- **Dependency Mapping**: Analyzes application dependencies for an efficient migration plan.  
+- **Sizing and Cost Prediction**: Provides right-sizing recommendations for Azure resources and migration cost estimation.
+
+
+### 2. Planning Phase
+**Objective**: Define the migration strategy and plan execution.  
+
+**Azure Migrate Role**:  
+- **Selection of Migration Strategy**: Helps determine the right migration approach (e.g., rehost, replatform, or refactor).  
+- **Service Mapping**: Maps on-premises resources to their Azure counterparts (e.g., VMs to Azure Virtual Machines, databases to Azure SQL).  
+- **Downtime Planning**: Estimates and plans downtime windows to ensure business continuity during migration.
+
+
+### 3. Execution Phase
+**Goal**: Migrate workloads to Azure with minimal disruption.  
+
+**Azure Migrate Role**:  
+- **Workload Migration**: Migrates Virtual Machines, databases, and applications to Azure using integrated tools like **Server Migration** and **Database Migration Service**.  
+- **Containerization & Modernization**: Supports modernizing applications using **Azure Kubernetes Service (AKS)** and **Azure App Service**.  
+- **Monitoring**: Monitors the migration process for potential issues and ensures successful execution.
+
+
+### 4. Validation Phase
+**Goal**: Confirm successful migration by ensuring workloads perform as expected.  
+
+**Azure Migrate Role**:  
+- **Testing**: Tests migrated workloads to verify functionality, performance, and security within Azure.  
+- **Compliance and Performance Validation**: Validates compliance with regulations and ensures workloads meet performance benchmarks.  
+- **Optimization**: Identifies opportunities to further optimize cost, performance, and security in the Azure environment.
+
+---
 
 # Part 2: Legacy System Modernization (ERP and Mainframe)
 
