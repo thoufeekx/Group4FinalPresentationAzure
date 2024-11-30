@@ -144,7 +144,6 @@ The diagram for the Azure Cloud Infrastructure represents the future IT landscap
 
 ## Phases of Migration Using Azure Migrate
 
----
 
 ### 1. Assessment Phase
 **Purpose**: Assess the existing on-premises environment readiness for migration.  
@@ -246,10 +245,10 @@ As the organization operates in industries that are subject to strict regulatory
 Minimizing downtime during the migration of critical services was essential to prevent disruptions in business operations. With many key processes dependent on the legacy ERP and e-commerce applications, any prolonged downtime could result in significant losses and operational delays. To address this challenge, we used **Azure Migrate and Azure Site Recovery** to carefully plan and execute the migration in phases, with clear rollback strategies. This approach allowed for the smooth migration of workloads while ensuring minimal disruption. We also implemented failover mechanisms and used **Azure Front Door** for high availability, keeping downtime to a minimum and ensuring that critical services remained operational throughout the transition.  
 
 
-
+---
 ## Part 3 Security and Data Protection
 
-
+---
 # Part 4: Cost Estimation
 ### **Cost Estimation for GlobalTech Solutions on Azure**  
 
