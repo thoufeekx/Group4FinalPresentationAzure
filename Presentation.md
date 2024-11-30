@@ -1,6 +1,6 @@
 
 # GlobalTech Solutions Cloud Migration Project
----
+
 
 # Project Overview
 
