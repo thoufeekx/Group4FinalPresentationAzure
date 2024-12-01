@@ -16,8 +16,6 @@
 # Part 4: Cost Estimation and optimization
 ### **Cost Estimation for GlobalTech Solutions on Azure**  
 
-I apologize for the oversight. Here's the revised version of the **Cost Estimation** section with both **Monthly** and **Annual** costs included, along with the **Cost Optimization** strategies, in a more professional format.
-
 ---
 
 ### **Cost Estimation and Optimization for Cloud Migration**

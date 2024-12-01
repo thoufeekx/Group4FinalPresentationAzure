@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Cost Estimation Pie Chart</title>
+    <title>Cloud Cost Estimation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,6 +22,8 @@
             background-color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            max-width: 1000px;
+            width: 100%;
         }
 
         .left {
@@ -42,10 +44,12 @@
         }
 
         .key-value {
-            font-size: 16px;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .key-value span {
@@ -57,6 +61,14 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
         }
     </style>
 </head>
@@ -79,10 +91,14 @@
     </div>
 </div>
 
+<div class="footer">
+    <p>Cloud cost analysis for optimal resource planning</p>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <script>
-    var colors = ['#ff6666', '#ffcc00', '#66cc66', '#99ccff', '#ff66cc'];
+    var colors = ['#6c5ce7', '#fdcb6e', '#00b894', '#0984e3'];
 
     var ctx = document.getElementById('myPieChart').getContext('2d');
     var myPieChart = new Chart(ctx, {
@@ -92,11 +108,10 @@
                 'VMs (150 VMs)',
                 'Storage (Blob + Archive)',
                 'SQL Managed Instance',
-                'Networking (Bandwidth + ExpressRoute)',
-                'Total'
+                'Networking (Bandwidth + ExpressRoute)'
             ],
             datasets: [{
-                data: [17500, 2580, 5400, 1800, 27780], // Cost data
+                data: [17500, 2580, 5400, 1800], // Updated data without "Total"
                 backgroundColor: colors, // Assign colors to the slices
                 borderColor: '#fff',
                 borderWidth: 2
@@ -127,7 +142,7 @@
     document.getElementById('key2').style.backgroundColor = colors[1];
     document.getElementById('key3').style.backgroundColor = colors[2];
     document.getElementById('key4').style.backgroundColor = colors[3];
-    document.getElementById('key5').style.backgroundColor = colors[4];
+    document.getElementById('key5').style.backgroundColor = '#f9f9f9'; // Keep the background neutral for Total
 </script>
 
 </body>
