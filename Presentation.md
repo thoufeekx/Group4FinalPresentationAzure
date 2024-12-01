@@ -121,7 +121,8 @@ These strategies—**Reserved Instances**, **Spot VMs**, **Auto-Scaling**, **Hyb
 
 ### **6. Visual Representation of Cost Optimization**
 
-Below is the **Mermaid diagram** illustrating the breakdown of both **cost estimation** and **cost optimization**.
+Below is the **Mermaid diagram** illustrating the breakdown of **cost estimation**.
+![Alt Text](./images/image.png)
 
 
 ---

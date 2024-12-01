@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Cost Estimation Pie Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .left {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .key-value {
+            font-size: 16px;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .key-value span {
+            font-weight: bold;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left side: Pie Chart -->
+    <div class="left">
+        <div class="heading">Cloud Cost Estimation</div>
+        <canvas id="myPieChart" width="300" height="300"></canvas>
+    </div>
+
+    <!-- Right side: Key and Value List -->
+    <div class="right">
+        <div class="key-value" id="key1"><span>VMs (150 VMs)</span>: $17,500</div>
+        <div class="key-value" id="key2"><span>Storage (Blob + Archive)</span>: $2,580</div>
+        <div class="key-value" id="key3"><span>SQL Managed Instance</span>: $5,400</div>
+        <div class="key-value" id="key4"><span>Networking (Bandwidth + ExpressRoute)</span>: $1,800</div>
+        <div class="key-value" id="key5"><span>Total</span>: $27,780</div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script>
+    var colors = ['#ff6666', '#ffcc00', '#66cc66', '#99ccff', '#ff66cc'];
+
+    var ctx = document.getElementById('myPieChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [
+                'VMs (150 VMs)',
+                'Storage (Blob + Archive)',
+                'SQL Managed Instance',
+                'Networking (Bandwidth + ExpressRoute)',
+                'Total'
+            ],
+            datasets: [{
+                data: [17500, 2580, 5400, 1800, 27780], // Cost data
+                backgroundColor: colors, // Assign colors to the slices
+                borderColor: '#fff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                datalabels: {
+                    color: '#fff',
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: (value) => `$${value.toLocaleString()}`, // Display cost values
+                    anchor: 'center',
+                    align: 'center'
+                }
+            }
+        }
+    });
+
+    // Assign the same colors to the key-value elements
+    document.getElementById('key1').style.backgroundColor = colors[0];
+    document.getElementById('key2').style.backgroundColor = colors[1];
+    document.getElementById('key3').style.backgroundColor = colors[2];
+    document.getElementById('key4').style.backgroundColor = colors[3];
+    document.getElementById('key5').style.backgroundColor = colors[4];
+</script>
+
+</body>
+</html>
