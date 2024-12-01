@@ -109,9 +109,7 @@ After applying the **cost optimization strategies**, the following table illustr
 
 ---
 
-#### **5. Conclusion**
 
-By implementing the above **cost optimization strategies**, **GlobalTech Solutions** can achieve substantial savings while maintaining a scalable, secure, and high-performing cloud environment. The total **optimized annual cost** of **$178,400 USD** represents a **45% reduction** from the original estimate, allowing the company to allocate resources more effectively and remain within budget. The **optimized monthly cost** comes to approximately **$14,866.67 USD**, which further supports operational budget planning.
 
 These strategies—**Reserved Instances**, **Spot VMs**, **Auto-Scaling**, **Hybrid Benefits**, and continuous monitoring through **Azure Cost Management**—ensure that both short-term and long-term cost-efficiency goals are met.
 
@@ -119,7 +117,7 @@ These strategies—**Reserved Instances**, **Spot VMs**, **Auto-Scaling**, **Hyb
 
 ### **6. Visual Representation of Cost Optimization**
 
-Below is the **Mermaid diagram** illustrating the breakdown of **cost estimation**.
+Below is the **pie chart** illustrating the breakdown of **cost estimation**.
 ![Alt Text](./images/image.png)
 
 
