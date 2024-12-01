@@ -118,7 +118,7 @@ These strategies—**Reserved Instances**, **Spot VMs**, **Auto-Scaling**, **Hyb
 ### **6. Visual Representation of Cost Optimization**
 
 Below is the **pie chart** illustrating the breakdown of **cost estimation**.
-![Alt Text](./images/image.png)
+![Alt Text](./imagesCost/image.png)
 
 
 ---
