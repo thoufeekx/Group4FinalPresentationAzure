@@ -249,6 +249,92 @@ Minimizing downtime during the migration of critical services was essential to p
 ---
 ## Part 3 Security and Data Protection
 
+# Data Security and Compliance
+
+## 1. Implementing Azure Security Center and Azure Sentinel for Security During Migration
+
+### Azure Security Center (ASC)
+- **Security Posture**:  
+  Azure Security Center (ASC) continuously evaluates the security of both on-premises systems (like ERP and mainframes) and migrated workloads in Azure (like SQL databases, e-commerce applications). It scans for vulnerabilities and provides real-time recommendations to address security gaps during migration.
+
+- **Threat Detection**:  
+  ASC detects security threats as GlobalTech Solutions migrates critical systems (e.g., customer data, financial information). It monitors all Azure resources and offers threat detection capabilities to prevent and respond to potential breaches.
+
+- **Security Compliance**:  
+  With GDPR and HIPAA compliance requirements, ASC automatically aligns Azure resources with relevant security policies, ensuring that sensitive customer data is protected during and after migration. This is essential for meeting regulatory standards across multiple countries.
+
+### Azure Sentinel
+- **Security Analytics**:  
+  Azure Sentinel aggregates and analyzes security data from Azure resources (e.g., VMs, SQL Managed Instances, Kubernetes) to detect potential security breaches or compliance issues. It plays a critical role in monitoring sensitive systems like ERP and databases during migration.
+
+- **Incident Response**:  
+  If security threats are detected, Azure Sentinel can automatically trigger response actions (e.g., blocking unauthorized access or alerting the security team). This allows GlobalTech to respond quickly and effectively to issues during the migration of mission-critical systems, ensuring minimal disruption.
+
+---
+
+## 2. Compliance Strategy: Azure Blueprint and Azure Policy
+
+### Azure Blueprint
+- **Compliance Frameworks**:  
+  Azure Blueprint helps GlobalTech Solutions deploy compliance-ready environments by using predefined frameworks (e.g., GDPR Blueprint), ensuring Azure resources meet regulatory standards like GDPR and HIPAA.
+
+- **Migration Templates**:  
+  It provides pre-configured templates for resource governance and security, ensuring resources are deployed according to compliance requirements during migration.
+
+### Azure Policy
+- **Regulatory Compliance**:  
+  Azure Policy ensures that new resources (e.g., VMs, databases) adhere to compliance standards like GDPR and HIPAA, including enforcing rules like data residency.
+
+- **Auditing**:  
+  It monitors compliance by tracking and reporting non-compliant resources, such as those not encrypted or deployed outside compliant regions, ensuring ongoing adherence.
+
+---
+
+## 3. Disaster Recovery Strategies Using Azure Site Recovery and Backup Solutions
+
+### Azure Site Recovery (ASR)
+- **Disaster Recovery for Legacy and Modern Workloads**:  
+  Azure Site Recovery (ASR) replicates legacy ERP systems and mainframes to Azure, ensuring minimal downtime (under 4 hours) during migration. In case of failure, ASR provides seamless failover to Azure, minimizing service disruptions.
+
+- **Cross-Region Support**:  
+  ASR enables workload replication across multiple Azure regions, ensuring business continuity and disaster recovery even in the event of a region-specific failure.
+
+### Azure Backup
+- **Data Protection for Migration**:  
+  Azure Backup ensures critical systems (e.g., SQL Database Cluster, E-Commerce Applications) are regularly backed up during migration, protecting against data loss or corruption.
+
+- **Point-in-Time Restores**:  
+  Azure Backup allows restoration of data to specific points in time, which is crucial for recovering sensitive workloads, such as customer data, in case of issues during migration.
+
+---
+
+## 4. Protecting Sensitive Data During Migration with Azure Key Vault, Encryption, and IAM
+
+### Azure Key Vault
+- **Secrets Management**:  
+  Azure Key Vault securely stores and manages sensitive data (e.g., encryption keys, connection strings, database credentials) during migration, with strict access controls to ensure security.
+
+- **Key Management for Compliance**:  
+  Azure Key Vault helps meet GDPR and HIPAA requirements by enabling secure encryption key management, with policies for key rotation, secure storage, and audit tracking.
+
+### Encryption Methods
+- **Encryption at Rest and in Transit**:  
+  Azure ensures protection for sensitive data like SQL databases through encryption at rest (e.g., Azure Storage encryption) and in transit (e.g., TLS encryption) to safeguard data during migration.
+
+- **Regulatory Compliance**:  
+  These encryption methods support compliance with GDPR, ensuring personally identifiable information (PII) is protected.
+
+### Identity and Access Management (IAM)
+- **Role-Based Access Control (RBAC)**:  
+  RBAC allows GlobalTech to control access to Azure resources, ensuring only authorized personnel (e.g., database admins) can access critical systems during migration.
+
+- **Multi-Factor Authentication (MFA)**:  
+  MFA adds an extra layer of security for accessing sensitive resources, like the SQL Database and ERP system.
+
+- **Azure Active Directory (AAD)**:  
+  Azure Active Directory (AAD) integrates unified identity management, ensuring secure access to Azure-based applications and services throughout the migration process.
+
+
 ---
 # Part 4: Cost Estimation
 
